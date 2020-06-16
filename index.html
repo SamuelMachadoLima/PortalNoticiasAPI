@@ -60,7 +60,7 @@
 
             <div class="navegacao row">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="#"><img src="img/home.svg" width="18px"></a>
+                    <a class="navbar-brand" href="/"><img src="img/home.svg" width="18px"></a>
                     <button class="navbar-toggler bg-light" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -69,53 +69,26 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">ARTISTAS <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    NOTÍCIAS
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    ETIQUETAS
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    NOSSA EMPRESA
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
+                            <li class="d-flex align-items-center">
+                                Fontes:
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">LOJA ONLINE<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" id="bbc-news">BBC News<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="cnn">CNN<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="nbc-news">NBC News<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="engadget">Engadget<span class="sr-only">(current)</span></a>
                             </li>
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
-                                aria-label="Pesquisar">
-                            <button type="button" class="btn btn-outline-light">Pesquisar</button>
+                                aria-label="Pesquisar" id="txtPesquisa">
+                            <button type="button" class="btn btn-outline-light" id="btnPesquisa">Pesquisar</button>
                         </form>
                     </div>
                 </nav>
@@ -133,10 +106,10 @@
                     <div class="col-xs-12 col-md-8">
                         <h4>NOTÍCIAS</h4>
                     </div>
-                    <div class="col-md-2 opc marcado">
+                    <div class="col-md-2 opc">
                         <a href="#">GRADE</a>
                     </div>
-                    <div class="col-md-2 opc">
+                    <div class="col-md-2 opc marcado ">
                         <a href="#">LISTA</a>
                     </div>
                 </div>
@@ -159,7 +132,7 @@
                         <a href="#">PUBLISHING</a>
                     </div>
                 </div>
-                <div class="row carousellabel">
+                <div class="row carousellabel mt-4">
                     <div class="container">
                         <div class="owl-carousel owl-theme">
                             <div class="item">
@@ -573,9 +546,8 @@
                 <div class="col-xs-12 col-lg-4">
                     <h6>Lorem ipsum dolor sit amet.</h6>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, quae ad corrupti, consequatur
-                        reiciendis facilis veniam aut et ut quos eligendi libero dolorem, totam quia non fugiat
-                        accusantium odit ab!
+                        Site criado Por Samuel Machado de Lima para a universidade PUC MG com intuito de aprendizado.
+                         Conteúdos obtidos a partir da NewsAPI
                     </p>
                     <p>
                         Eos nesciunt praesentium fugit autem rerum magnam distinctio, adipisci

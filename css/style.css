@@ -187,7 +187,6 @@ div.the_news{
 div.promoted .opc{
     text-align: center;
     width: 100%;
-    
 }
 div.promoted .opc a{
     color: #fff;
@@ -197,17 +196,71 @@ div.promoted .opc:not(.marcado) a{
 }
 .marcado{
     background-color: #f3a828;
-} 
-.cards_theNews{
-    margin-top: 5%;
-    text-align: center;
-    max-width: 45%;
 }
-.cards_theNews img{
+.theNews{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.box-noticia {
+    margin: 10px 0px;
+    overflow: auto;
+    color: dimgray;
+    clear: both;
+}
+.box-noticia img {
+    float: left;
+    margin-right: 10px;
+    width: 180px;
+}
+.box-noticia .titulo {
+    font-weight: 700;
+}
+.box-noticia .creditos {
+    color: red
+}
+.box-noticia .text, .box-noticia .creditos {
+    font-size: small;
+}
+.linkNoticia{
+    text-decoration: none;
+    padding: 20px;
+    border: 1px solid transparent;
+}
+.linkNoticia:hover{
+    text-decoration: none;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+.theNews img{
     height: 100%;
-    max-height: 200px;
     width: 100%;
+    max-width: 400px;
 }
+
+#navbarSupportedContent .nav-item{
+    cursor:pointer;
+}
+
+#navbarSupportedContent .navbar-nav li:nth-child(1){
+    text-decoration: underline;
+    color: #f3a828;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#navbarSupportedContent .navbar-nav li{
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
 .the_store{
     margin-top: 17%;
 }
@@ -425,6 +478,10 @@ ul.social li:nth-child(6) a:hover .fab{
     }
     .text-block {
         font-size: medium;
+    }
+    #navbarSupportedContent .navbar-nav li{
+        margin-left: 0px;
+        text-align: center;
     }
 }
 @media screen and (max-width: 992px) {
