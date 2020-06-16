@@ -1,11 +1,10 @@
 const API_KEY = 'd5166b0bfbb44a6693e30d7af18c8045';
-const url = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}&lang=pt&country=br`;
 
 onload = () => {
     let exclusivo = new XMLHttpRequest();
     exclusivo.onload = noticiasAPI;
     exclusivo.onerror = err => console.log(err);
-    exclusivo.open('GET', url)
+    exclusivo.open('GET', `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}&lang=pt&country=br`)
     exclusivo.send();
 }
 
@@ -86,7 +85,7 @@ onload = () => {
 
         let xhr = new XMLHttpRequest ();
         xhr.onload = noticiasAPI;
-        xhr.open ('GET', `https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}&lang=pt`);
+        xhr.open ('GET', `https://newsapi.org/v2/top-headlines?q=${query}&apiKey=${API_KEY}&lang=pt`);
         xhr.send ();
     }
     document.getElementById('btnPesquisa').addEventListener('click', executarPesquisa);
