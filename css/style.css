@@ -105,28 +105,9 @@ div.navbar-collapse form {
 header.header div.navegacao nav a img {
     vertical-align: baseline !important;
 }
-
-/* Carousel */
-main.main {
-    background-image: linear-gradient(#eff0f1, #fff, #eff0f1);
-    max-width: 100%;
-}
-main.main div#principal_carousel div.carousel-inner img {
-    max-width: 100%;
-    max-height: 100%;
-}
-main.main div.carousel-caption {
-    color: #fff;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #f3a828;
-}
-main.main div#principal_carousel .container {
-    text-align: center;
-}
-
 /* Noticias */
 main.main .news_cards {
-    margin-top: 3%;
+    margin-top: 1%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -158,9 +139,7 @@ div.news_cards p {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .exclusive_text {
-    display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     justify-content: space-between;
 }
 .exclusive .cont {
@@ -222,6 +201,7 @@ div.promoted .opc:not(.marcado) a{
 .cards_theNews{
     margin-top: 5%;
     text-align: center;
+    max-width: 45%;
 }
 .cards_theNews img{
     height: 100%;

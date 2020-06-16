@@ -2,39 +2,59 @@ const API_KEY = 'd5166b0bfbb44a6693e30d7af18c8045';
 const url = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}&lang=pt&country=br`;
 
 onload = () => {
-    let xhr = new XMLHttpRequest();
-    xhr.onload = carregaSlide;
-    xhr.onerror = err => console.log(err);
-    xhr.open('GET', url)
-    xhr.send();
+    let exclusivo = new XMLHttpRequest();
+    exclusivo.onload = cardPrincipal;
+    exclusivo.onerror = err => console.log(err);
+    exclusivo.open('GET', url)
+    exclusivo.send();
 }
 
-function carregaSlide() {
+function cardPrincipal() {
     let news = JSON.parse(this.responseText);
-    let carousel = document.getElementById('excludivo');
+    let exclusive = document.getElementById('exclusivo');
+    let gradeNews = document.getElementById('gradeNews');
 
-    let text = '';
-    let cont = 0;
+    let textExclusive = '';
+    let textNews = '';
+    let contExclusive = 0;
+    let contNews = 0;
 
 
 
     for (i = 0; i < news.articles.length; i++) {
+        let data = new Date(news.articles[i].publishedAt);
 
-        if (news.articles[i].urlToImage != null && cont < 3) {
-            text += `
-                <div class="carousel-item ${cont == 0 ? 'active' : ''}">
-                    <img src="${news.articles[i].urlToImage}">
-                    <div class="carousel-caption">
-                        <h3>${news.articles[i].title.substring(0,50) + "..."}</h3>
-                        <p>${news.articles[i].content.substring(0,50) + "..."} </p>
-                        <a class="linkCarousel" href="${news.articles[i].url}">Leia mais...</a>
+        if (news.articles[i].urlToImage != null && contExclusive < 1 && textExclusive == '') {
+            textExclusive += `
+                    <div class="col-xs-12 col-md-6 destaque_img">
+                        <img src="${news.articles[i].urlToImage}" class="exclusive">
+                        <h4 class="text-block">Exclusivo</h4>
                     </div>
+                    <div class="col-xs-12 col-md-6 exclusive_text">
+                        <p>${data.toLocaleDateString() != null ? (data.toLocaleDateString()) : ""}
+                        ${news.articles[i].source.name != null ? (" - " + news.articles[i].source.name) : ""}
+                        ${news.articles[i].author != null ? (" - " + news.articles[i].author) : ""}</p>
+                        <h2>${news.articles[i].title.substring(0, 20) + "..."}</h2>
+                        <p>${news.articles[i].content}</p>
+                        <p class="cont"><a href="${news.articles[i].url}">Continue Lendo →</a></p>
+                    </div>
+                `;
+            contExclusive++;
+        } else if (contNews < 4) {
+            textNews += `
+                <div class="cards_theNews">
+                    <p>${data.toLocaleDateString() != null ? (data.toLocaleDateString()) : ""}
+                    ${news.articles[i].source.name != null ? (" - " + news.articles[i].source.name) : ""}
+                    ${news.articles[i].author != null ? (" - " + news.articles[i].author) : ""}</p>
+                    <h3>${news.articles[i].title.substring(0, 70) + "..."}</h3>
+                    <img src="${news.articles[i].urlToImage}" class="exclusive">
+                    <p>${news.articles[i].content}</p>
+                    <a href="${news.articles[i].url}">Leia mais →</a>
                 </div>
             `;
-            cont++;
+            contNews++;
         }
     }
-
-
-    carousel.innerHTML = text;
+    exclusive.innerHTML = textExclusive;
+    gradeNews.innerHTML = textNews;
 }
