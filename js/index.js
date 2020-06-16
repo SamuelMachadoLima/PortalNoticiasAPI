@@ -36,13 +36,13 @@ onload = () => {
                             ${news.articles[i].author != null ? (" - " + news.articles[i].author) : ""}</p>
                             <h2>${news.articles[i].title.substring(0, 20) + "..."}</h2>
                             <p>${news.articles[i].content}</p>
-                            <p class="cont"><a href="${news.articles[i].url}">Continue Lendo →</a></p>
+                            <p class="cont"><a href="${news.articles[i].url}" target="_blank">Continue Lendo →</a></p>
                         </div>
                     `;
                 contExclusive++;
             } else if (contNews < 4 && news.articles[i].urlToImage != null) {
                 textNews += `
-                    <a href="${news.articles[i].url}" class="linkNoticia">    
+                    <a href="${news.articles[i].url}" class="linkNoticia" target="_blank">    
                         <div class="row box-noticia">
                             <div class="col-xs-12 col-md-6">
                                 <img src="${news.articles[i].urlToImage}" alt="">
